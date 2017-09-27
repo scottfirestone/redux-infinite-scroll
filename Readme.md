@@ -1,7 +1,4 @@
-[![Circle CI](https://circleci.com/gh/RealScout/redux-infinite-scroll.svg?style=svg)](https://circleci.com/gh/RealScout/redux-infinite-scroll)
-[![npm version](https://badge.fury.io/js/redux-infinite-scroll.svg)](https://badge.fury.io/js/redux-infinite-scroll)
-[![npm dm](https://img.shields.io/npm/dm/redux-infinite-scroll.svg)](https://www.npmjs.com/package/redux-infinite-scroll)
-[![Package Quality](http://npm.packagequality.com/shield/redux-infinite-scroll.svg)](http://packagequality.com/#?package=redux-infinite-scroll)
+# Note: This project was forked from https://github.com/RealScout/redux-infinite-scroll, and updated for compatibility with React 16.0.0.
 
 # Redux Infinite Scroll
 
@@ -47,15 +44,15 @@ The difference is due to the `ReduxInfiniteScroll` being an ES6 module and there
 
 ## Usage
 
-In order to use it in your React app, simply import it and follow the example below.  The component expects to receive 
-child elements that it then injects into the DOM.  The `loadMore` prop expects a function that requests for more 
-items to be loaded once the container/window has reached the bottom `threshold`.  If there are no more items left to 
-be passed to the component, make sure to set the `hasMore` prop to be `false`.  **Important** If you are using 
+In order to use it in your React app, simply import it and follow the example below.  The component expects to receive
+child elements that it then injects into the DOM.  The `loadMore` prop expects a function that requests for more
+items to be loaded once the container/window has reached the bottom `threshold`.  If there are no more items left to
+be passed to the component, make sure to set the `hasMore` prop to be `false`.  **Important** If you are using
 an element as the scrollable component, rather than the window, you MUST pass a fixed height to the `containerHeight`
 prop.
 
 ##### ES6 format
- 
+
 ```javascript
 
 // MessageList.jsx
@@ -67,7 +64,7 @@ class MessageList extends Component {
   _loadMore() {
     this.props.dispatch(ChatActions.fetchMessages())
   }
-  
+
   _renderMessages() {
     return _.map(this.props.messages, (msg) => {
       return(
@@ -75,7 +72,7 @@ class MessageList extends Component {
       )
     })
   }
-  
+
   render() {
     return (
         <InfiniteScroll
